@@ -1,0 +1,506 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17494,        497]
+NotebookOptionsPosition[     15628,        428]
+NotebookOutlinePosition[     15986,        444]
+CellTagsIndexPosition[     15943,        441]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["List of Authors", "Chapter",
+ CellChangeTimes->{{3.695789906444645*^9, 3.695789910834715*^9}}],
+
+Cell["Define a list of authors that we are interested in", "Text",
+ CellChangeTimes->{{3.695789912820396*^9, 3.6957899209704857`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"authorsDict", "=", 
+  RowBox[{"Association", "@", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\"\<I.Tambora.1\>\"", "\[Rule]", "\"\<463919\>\""}], ",", 
+     RowBox[{"\"\<A.Mirizzi.1\>\"", "->", "\"\<417997\>\""}], ",", 
+     RowBox[{"\"\<Georg.G.Raffelt.1\>\"", "\[Rule]", "\"\<429364\>\""}], ",", 
+     
+     RowBox[{"\"\<Huaiyu.Duan.1\>\"", "\[Rule]", "\"\<397163\>\""}], ",", 
+     RowBox[{"\"\<G.M.Fuller.1\>\"", "\[Rule]", "\"\<374677\>\""}], ",", 
+     RowBox[{"\"\<G.M.Fuller.2\>\"", "\[Rule]", "\"\<10042799\>\""}], ",", 
+     RowBox[{"\"\<G.M.Fuller.3\>\"", "\[Rule]", "\"\<10099942\>\""}], ",", 
+     RowBox[{"\"\<J.P.Kneller.1\>\"", "->", "\"\<436489\>\""}]}], 
+    "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.695790418589354*^9, 3.695790439896888*^9}, {
+   3.695790530040834*^9, 3.695790555500791*^9}, {3.695791435402528*^9, 
+   3.695791462637987*^9}, 3.695791500769721*^9, {3.6957915500281887`*^9, 
+   3.695791570880287*^9}, {3.695791627204455*^9, 3.6957916362345*^9}, {
+   3.6957916742539387`*^9, 3.6957917048359003`*^9}, {3.6957917648676558`*^9, 
+   3.695791787698976*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"I.Tambora.1\"\>", "\[Rule]", "\<\"463919\"\>"}], ",", 
+   RowBox[{"\<\"A.Mirizzi.1\"\>", "\[Rule]", "\<\"417997\"\>"}], ",", 
+   RowBox[{"\<\"Georg.G.Raffelt.1\"\>", "\[Rule]", "\<\"429364\"\>"}], ",", 
+   RowBox[{"\<\"Huaiyu.Duan.1\"\>", "\[Rule]", "\<\"397163\"\>"}], ",", 
+   RowBox[{"\<\"G.M.Fuller.1\"\>", "\[Rule]", "\<\"374677\"\>"}], ",", 
+   RowBox[{"\<\"G.M.Fuller.2\"\>", "\[Rule]", "\<\"10042799\"\>"}], ",", 
+   RowBox[{"\<\"G.M.Fuller.3\"\>", "\[Rule]", "\<\"10099942\"\>"}], ",", 
+   RowBox[{"\<\"J.P.Kneller.1\"\>", "\[Rule]", "\<\"436489\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.6957905562418003`*^9, 3.6957914471194973`*^9, 3.695791519990129*^9, 
+   3.695791572123725*^9, 3.695791705500334*^9, {3.695791775141913*^9, 
+   3.695791788375669*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"authorsID", "=", 
+  RowBox[{"Values", "@", "authors"}]}], "\[IndentingNewLine]", 
+ RowBox[{"authorsName", "=", 
+  RowBox[{"Keys", "@", "authors"}]}]}], "Input",
+ CellChangeTimes->{{3.6957905868962812`*^9, 3.6957905968405657`*^9}, {
+  3.695791790738635*^9, 3.6957918081383533`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"463919\"\>", ",", "\<\"417997\"\>", ",", "\<\"429364\"\>", 
+   ",", "\<\"397163\"\>", ",", "\<\"374677\"\>", ",", "\<\"10042799\"\>", 
+   ",", "\<\"10099942\"\>", ",", "\<\"436489\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.695790591757573*^9, 3.6957905971995897`*^9}, 
+   3.6957914478901653`*^9, 3.695791520896615*^9, {3.695791782213657*^9, 
+   3.695791808724412*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"I.Tambora.1\"\>", ",", "\<\"A.Mirizzi.1\"\>", 
+   ",", "\<\"Georg.G.Raffelt.1\"\>", ",", "\<\"Huaiyu.Duan.1\"\>", 
+   ",", "\<\"G.M.Fuller.1\"\>", ",", "\<\"G.M.Fuller.2\"\>", 
+   ",", "\<\"G.M.Fuller.3\"\>", ",", "\<\"J.P.Kneller.1\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.695790591757573*^9, 3.6957905971995897`*^9}, 
+   3.6957914478901653`*^9, 3.695791520896615*^9, {3.695791782213657*^9, 
+   3.6957918087343388`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Extract JSON", "Subchapter",
+ CellChangeTimes->{{3.695791829722163*^9, 3.695791837664386*^9}}],
+
+Cell["Construct a fuction to extract json", "Text",
+ CellChangeTimes->{{3.695791840688472*^9, 3.695791847496379*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"colPair", "[", 
+   RowBox[{"authorName_", ",", "coauthorName_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "authorIDM", ",", "coauthorIDM", ",", "jsonurlM", ",", "rawM", ",", 
+      "htmlrawM", ",", "htmlrenderedM"}], "}"}], ",", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"authorIDM", "=", 
+      RowBox[{"Lookup", "[", 
+       RowBox[{"authorsDict", ",", "authorName"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"jsonurlM", "=", 
+      RowBox[{
+      "\"\<http://inspirehep.net/author/profile/co-authors?jsondata=%7B%\
+22personId%22%3A%22\>\"", "<>", "authorIDM", "<>", "\"\<%22%7D\>\""}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"rawM", "=", 
+      RowBox[{"Import", "[", 
+       RowBox[{"jsonurlM", ",", "\"\<JSON\>\"", ",", 
+        RowBox[{"CharacterEncoding", "\[Rule]", "\"\<UTF-8\>\""}]}], "]"}]}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"htmlrawM", "=", 
+      RowBox[{"\"\<html\>\"", "/.", "rawM"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"htmlrenderedM", "=", 
+      RowBox[{"ToString", "@", 
+       RowBox[{"ImportString", "[", 
+        RowBox[{"htmlrawM", ",", "\"\<HTML\>\""}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"StringCases", "[", 
+         RowBox[{"\"\<Georg.G.Raffelt.1 ( 14 )\>\"", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"coauthorName", "<>", "\"\< ( \>\""}], "~~", 
+            RowBox[{"(", 
+             RowBox[{"x", ":", 
+              RowBox[{"DigitCharacter", ".."}]}], ")"}]}], "\[Rule]", "x"}]}],
+          "]"}], "/.", 
+        RowBox[{
+         RowBox[{"{", "}"}], "\[Rule]", 
+         RowBox[{"{", "0", "}"}]}]}], "//", "ToExpression"}], "//", 
+      "First"}]}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6957918686451607`*^9, 3.6957919700164547`*^9}, {
+  3.695792098325902*^9, 3.695792267636368*^9}, {3.69579230324468*^9, 
+  3.69579230443209*^9}, {3.695792935618634*^9, 3.695792939587257*^9}, {
+  3.695792970119413*^9, 3.6957929777437153`*^9}}],
+
+Cell["Test this function", "Text",
+ CellChangeTimes->{{3.69579244032428*^9, 3.695792442866817*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"colPair", "[", 
+  RowBox[{"\"\<I.Tambora.1\>\"", ",", "\"\<Georg.G.Raffelt.1\>\""}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"colPair", "[", 
+  RowBox[{"\"\<I.Tambora.1\>\"", ",", "\"\<G.M.Fuller.1\>\""}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.695792275700366*^9, 3.6957922947787447`*^9}, {
+  3.695792943386198*^9, 3.695792957792712*^9}}],
+
+Cell[BoxData["14"], "Output",
+ CellChangeTimes->{{3.69579229664786*^9, 3.695792307872026*^9}, {
+  3.695792959329269*^9, 3.6957929820748577`*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{{3.69579229664786*^9, 3.695792307872026*^9}, {
+  3.695792959329269*^9, 3.695792984045219*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generate Data Table", "Subchapter",
+ CellChangeTimes->{{3.69579244866774*^9, 3.695792455354311*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"matTable", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"colPair", "[", 
+     RowBox[{"a", ",", "b"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", "authorsName"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"b", ",", "authorsName"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.695792422440978*^9, 3.6957924823701344`*^9}, {
+  3.695792662016211*^9, 3.695792674453829*^9}, {3.695792995944496*^9, 
+  3.695793001157833*^9}, {3.69579311135855*^9, 3.695793112953968*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "14", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "14", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "14", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "14", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "14", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "14", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "14", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "14", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.695792746431581*^9, 3.6957930029790897`*^9, 
+  3.69579308359656*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixPlot", "[", 
+  RowBox[{"matTable", ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<Collaboration Matrix\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.695793114983486*^9, 3.6957931209541283`*^9}, {
+  3.695793172941967*^9, 3.695793187075335*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJxTTMoPSmVmYGDggGIQGwI+2JNKP6wSWef+8JY9Awog3ZyBokfdP+r+UfeP
+un+kux8AXu/1AA==
+   "], {{0, 0}, {8, 8}}, {0, 1}],
+  Frame->True,
+  FrameLabel->{None, None},
+  FrameTicks->{{{{7.5, 
+       FormBox["1", TraditionalForm]}, {6.5, 
+       FormBox["2", TraditionalForm]}, {5.5, 
+       FormBox["3", TraditionalForm]}, {4.5, 
+       FormBox["4", TraditionalForm]}, {3.5, 
+       FormBox["5", TraditionalForm]}, {2.5, 
+       FormBox["6", TraditionalForm]}, {1.5, 
+       FormBox["7", TraditionalForm]}, {0.5, 
+       FormBox["8", TraditionalForm]}}, {{7.5, 
+       FormBox["1", TraditionalForm]}, {6.5, 
+       FormBox["2", TraditionalForm]}, {5.5, 
+       FormBox["3", TraditionalForm]}, {4.5, 
+       FormBox["4", TraditionalForm]}, {3.5, 
+       FormBox["5", TraditionalForm]}, {2.5, 
+       FormBox["6", TraditionalForm]}, {1.5, 
+       FormBox["7", TraditionalForm]}, {0.5, 
+       FormBox["8", TraditionalForm]}}}, {{{0.5, 
+       FormBox["1", TraditionalForm]}, {1.5, 
+       FormBox["2", TraditionalForm]}, {2.5, 
+       FormBox["3", TraditionalForm]}, {3.5, 
+       FormBox["4", TraditionalForm]}, {4.5, 
+       FormBox["5", TraditionalForm]}, {5.5, 
+       FormBox["6", TraditionalForm]}, {6.5, 
+       FormBox["7", TraditionalForm]}, {7.5, 
+       FormBox["8", TraditionalForm]}}, {{0.5, 
+       FormBox["1", TraditionalForm]}, {1.5, 
+       FormBox["2", TraditionalForm]}, {2.5, 
+       FormBox["3", TraditionalForm]}, {3.5, 
+       FormBox["4", TraditionalForm]}, {4.5, 
+       FormBox["5", TraditionalForm]}, {5.5, 
+       FormBox["6", TraditionalForm]}, {6.5, 
+       FormBox["7", TraditionalForm]}, {7.5, 
+       FormBox["8", TraditionalForm]}}}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultPlotStyle" -> Automatic, "DomainPadding" -> Scaled[0.02], 
+    "RangePadding" -> Scaled[0.05]},
+  PlotLabel->FormBox["\"Collaboration Matrix\"", TraditionalForm]]], "Output",\
+
+ CellChangeTimes->{3.695793121392743*^9, 3.695793187456772*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Program & Test", "Chapter",
+ CellChangeTimes->{{3.695789897636446*^9, 3.69578990265897*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"id", "=", "\"\<463919\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"url", "=", 
+  "\"\<http://inspirehep.net/author/profile/I.Tamborra.1\>\""}], "\
+\[IndentingNewLine]", 
+ RowBox[{"jsonurl", "=", 
+  RowBox[{
+  "\"\<http://inspirehep.net/author/profile/co-authors?jsondata=%7B%\
+22personId%22%3A%22\>\"", "<>", "id", "<>", "\"\<%22%7D\>\""}]}]}], "Input",
+ CellChangeTimes->{{3.695783339063757*^9, 3.695783345527195*^9}, {
+  3.695787538210651*^9, 3.695787595914405*^9}}],
+
+Cell[BoxData["\<\"http://inspirehep.net/author/profile/I.Tamborra.1\"\>"], \
+"Output",
+ CellChangeTimes->{
+  3.6957833876325274`*^9, {3.6957875468431473`*^9, 3.695787596882557*^9}}],
+
+Cell[BoxData["\<\"http://inspirehep.net/author/profile/co-authors?jsondata=%\
+7B%22personId%22%3A%22463919%22%7D\"\>"], "Output",
+ CellChangeTimes->{
+  3.6957833876325274`*^9, {3.6957875468431473`*^9, 3.695787596888137*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"raw", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"jsonurl", ",", "\"\<JSON\>\"", ",", 
+     RowBox[{"CharacterEncoding", "\[Rule]", "\"\<UTF-8\>\""}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.695784654218718*^9, 3.695784664729926*^9}, 
+   3.6957875262039137`*^9, {3.695787613348413*^9, 3.6957876177548027`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"htmlraw", "=", 
+   RowBox[{"\"\<html\>\"", "/.", "raw"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6957879429719687`*^9, 3.695787944193543*^9}, 
+   3.6957886350645638`*^9, {3.6957886698371553`*^9, 3.6957886898186607`*^9}, {
+   3.695789224037328*^9, 3.695789234634618*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"htmlrendered", "=", 
+   RowBox[{"ToString", "@", 
+    RowBox[{"ImportString", "[", 
+     RowBox[{"htmlraw", ",", "\"\<HTML\>\""}], "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.695789277853591*^9, 3.695789478044257*^9}}],
+
+Cell["Georg.G.Raffelt.1 ( 14 )", "Text",
+ CellChangeTimes->{3.69578948462287*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"StringCases", "[", 
+   RowBox[{"htmlrendered", ",", 
+    RowBox[{"DigitCharacter", " ", ".."}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"StringCases", "[", 
+   RowBox[{"htmlrendered", ",", 
+    RowBox[{"WordCharacter", " ", ".."}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.695789571176712*^9, 3.69578958595887*^9}, {
+  3.695789721494698*^9, 3.695789743429058*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringCases", "[", 
+  RowBox[{"\"\<item13, task15, item11, var4, item2\>\"", ",", 
+   RowBox[{
+    RowBox[{"\"\<item\>\"", "~~", 
+     RowBox[{"(", 
+      RowBox[{"x", ":", 
+       RowBox[{"DigitCharacter", ".."}]}], ")"}]}], "\[Rule]", "x"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6957896861925497`*^9, 3.69578968620047*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"13\"\>", ",", "\<\"11\"\>", ",", "\<\"2\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.695789686584997*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"StringCases", "[", 
+   RowBox[{"\"\<Georg.G.Raffelt.1 ( 14 )\>\"", ",", 
+    RowBox[{
+     RowBox[{"\"\<Georg.G.Raffelt.1 ( \>\"", "~~", 
+      RowBox[{"(", 
+       RowBox[{"x", ":", 
+        RowBox[{"DigitCharacter", ".."}]}], ")"}]}], "\[Rule]", "x"}]}], 
+   "]"}], "//", "ToExpression"}]], "Input",
+ CellChangeTimes->{{3.6957894502340918`*^9, 3.695789556174478*^9}, {
+  3.69578961677389*^9, 3.6957896697136393`*^9}, {3.695789706180979*^9, 
+  3.6957897071543903`*^9}, {3.69578977784595*^9, 3.6957898513650093`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "14", "}"}]], "Output",
+ CellChangeTimes->{{3.695789638565254*^9, 3.695789670052647*^9}, 
+   3.6957897076825733`*^9, {3.695789779042645*^9, 3.695789851918841*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 655},
+WindowMargins->{{144, Automatic}, {Automatic, 38}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 100, 1, 65, "Chapter"],
+Cell[683, 25, 134, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[842, 30, 1113, 20, 80, "Input"],
+Cell[1958, 52, 867, 15, 63, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2862, 72, 306, 6, 46, "Input"],
+Cell[3171, 80, 417, 7, 28, "Output"],
+Cell[3591, 89, 475, 9, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4103, 103, 100, 1, 62, "Subchapter"],
+Cell[4206, 106, 117, 1, 30, "Text"],
+Cell[4326, 109, 2275, 53, 335, "Input"],
+Cell[6604, 164, 99, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[6728, 169, 371, 8, 46, "Input"],
+Cell[7102, 179, 145, 2, 28, "Output"],
+Cell[7250, 183, 142, 2, 28, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7441, 191, 106, 1, 62, "Subchapter"],
+Cell[CellGroupData[{
+Cell[7572, 196, 517, 12, 28, "Input"],
+Cell[8092, 210, 1191, 36, 63, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9320, 251, 278, 6, 28, "Input"],
+Cell[9601, 259, 2102, 48, 436, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11764, 314, 106, 1, 65, "Chapter"],
+Cell[CellGroupData[{
+Cell[11895, 319, 508, 11, 97, "Input"],
+Cell[12406, 332, 181, 3, 28, "Output"],
+Cell[12590, 337, 224, 3, 46, "Output"]
+}, Open  ]],
+Cell[12829, 343, 360, 8, 28, "Input"],
+Cell[13192, 353, 307, 6, 28, "Input"],
+Cell[13502, 361, 259, 6, 28, "Input"],
+Cell[13764, 369, 81, 1, 30, "Text"],
+Cell[13848, 372, 431, 11, 46, "Input"],
+Cell[CellGroupData[{
+Cell[14304, 387, 356, 9, 28, "Input"],
+Cell[14663, 398, 154, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14854, 407, 552, 12, 46, "Input"],
+Cell[15409, 421, 191, 3, 28, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
